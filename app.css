@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--green:#073e31;--green2:#0b493a;--cream:#f5f1e7;--gold:#b08a43;--blade:0%;--rake:11deg;--sweep:0%;font-family:Inter,system-ui,sans-serif;color:#f8f5ed;background:#061a14}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 52% 38%,#0c3026 0,#071f18 53%,#04140f 100%);overflow-x:hidden}
+.topbar{height:42px;background:#020d09;border-bottom:1px solid #173328;display:flex;align-items:center;justify-content:space-between;padding:0 18px;color:#c8d1c8;font:10px 'DM Mono',monospace}
+.lights{display:flex;gap:5px}.lights i{width:7px;height:7px;border-radius:50%;background:#ff6058}.lights i:nth-child(2){background:#ffc04d}.lights i:nth-child(3){background:#2dca64}
+.wordmark{font-weight:500;letter-spacing:.4px}.wordmark span{color:#66786d}.wordmark b{color:#f28a9a}.wordmark em{color:#83b9f5;font-style:normal}.wordmark strong{color:#f5c34c}.location{color:#72867a}
+.page{width:min(100% - 32px,690px);margin:0 auto;padding:32px 0 24px}
+.intro{text-align:center;margin:0 0 24px}.intro p{font:500 9px 'DM Mono',monospace;letter-spacing:2px;color:#6c9683;margin:0 0 7px}
+h1{font-size:clamp(25px,4vw,32px);line-height:1.03;letter-spacing:-1.1px;margin:0;font-weight:800;color:#f6f4ed}
+h1 span{color:#d9a84b}
+.auth-card{height:360px;position:relative;border-radius:12px;overflow:hidden;background:var(--cream);box-shadow:0 18px 45px #0005;border:1px solid #486b5c;--sweep:0%;isolation:isolate}
+.forms{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;background:var(--cream)}
+.form-panel{grid-row:1;grid-column:1/3;width:50%;height:100%;padding:0 39px 0 38px;display:flex;align-items:center;color:#20271f;transition:opacity .3s;position:relative}
+.form-inner{width:100%;max-width:290px;margin:auto}
+.form-panel h2{font-size:17px;letter-spacing:-.5px;margin:0 0 8px;font-weight:700}
+.underline{display:block;width:36px;height:3px;background:var(--gold);margin-bottom:20px}
+.field{display:block;position:relative;margin:0 0 14px;border-bottom:1px solid #bdb7a8}
+.field input{width:100%;height:29px;border:0;outline:0;background:transparent;font:12px Inter,sans-serif;color:#20271f;padding:0 26px 0 0}
+.field input::placeholder{color:#8c8a80;opacity:1}
+.field:focus-within{border-color:#0a5944;box-shadow:0 1px #0a5944}
+.field-icon{position:absolute;right:2px;top:5px;color:#8c8b80;font-size:15px;background:none;border:0;padding:0;line-height:1}
+button{font-family:inherit}
+.form-options{display:flex;justify-content:space-between;align-items:center;margin:2px 0 14px;font-size:9px;color:#74756c;gap:6px}
+.remember{display:flex;align-items:center;gap:5px;white-space:nowrap}.remember input{accent-color:#07513d;width:13px;height:13px;margin:0}
+.text-button{border:0;background:none;color:#8b6a32;text-decoration:underline;text-underline-offset:3px;font-size:inherit;font-weight:700;padding:0;cursor:pointer;white-space:nowrap}
+.submit{width:100%;height:37px;border:0;border-radius:24px;background:linear-gradient(180deg,#0b5843,#033b2d);color:#fff;font-size:11px;font-weight:700;cursor:pointer;box-shadow:0 5px 12px #174a3828;transition:transform .2s,filter .2s}
+.submit:hover{filter:brightness(1.12);transform:translateY(-1px)}.submit:active{transform:scale(.98)}
+.switch-copy{font-size:10px;color:#77766d;margin:14px 0 0;white-space:nowrap}.switch-copy .text-button{font-size:10px;color:#20271f}
+.form-message{font-size:9px;min-height:12px;color:#a34b3b;margin:7px 0 0}
+.signup-panel{opacity:0;pointer-events:none;transform:translateX(8px);transition:opacity .25s .05s,transform .35s}
+.auth-band{position:absolute;z-index:4;inset:0;width:100%;height:100%;overflow:hidden;transform:skewX(var(--rake)) translateX(var(--sweep));transform-origin:center;transition:transform .76s cubic-bezier(.76,0,.18,1);pointer-events:none}
+.band-edge{position:absolute;inset:0;background:linear-gradient(145deg,#0b4a3a,#032d23 75%);box-shadow:inset 1px 0 #ffffff2a;clip-path:polygon(52% 0,100% 0,100% 100%,66% 100%)}
+.band-inner{position:absolute;inset:0;transform:skewX(calc(-1 * var(--rake))) translateX(calc(-1 * var(--sweep)));color:#f5f1e7}
+.band-page{position:absolute;top:0;left:56%;width:38%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:20px 18px}
+.mini-brand{font:700 9px 'DM Mono',monospace;letter-spacing:2px;color:#d7b66d;margin:0 0 15px}
+.band-page h3{font:30px/.95 'DM Serif Display',Georgia,serif;font-weight:400;margin:0 0 15px;letter-spacing:-.5px}
+.band-page h3 em{color:#d5b36e}
+.band-page>p:last-child{font-size:10px;line-height:1.65;color:#afc3b7;margin:0;max-width:230px}
+.signup-welcome{left:10%;opacity:0}
+.auth-card[data-mode="signup"] .auth-band{--sweep:-57%;--rake:-11deg}
+.auth-card[data-mode="signup"] .signin-panel{opacity:0;pointer-events:none;transform:translateX(-8px)}
+.auth-card[data-mode="signup"] .signup-panel{opacity:1;pointer-events:auto;transform:translateX(0)}
+.auth-card[data-mode="signup"] .welcome-page{opacity:0}
+.auth-card[data-mode="signup"] .signup-welcome{opacity:1}
+.auth-card[data-mode="signup"] .band-edge{clip-path:polygon(0 0,52% 0,34% 100%,0 100%)}
+.footnote{text-align:center;font-size:10px;color:#648275;margin:19px 0 0}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;background:#f5f1e7;color:#123d2e;padding:11px 16px;border-radius:30px;font-size:11px;box-shadow:0 10px 30px #0005;transition:.25s;pointer-events:none;z-index:10;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:600px){.page{width:calc(100% - 22px);padding-top:26px}.auth-card{height:390px}.form-panel{padding:0 18px;width:58%}.band-page{left:57%;width:40%;padding:12px 9px}.band-page h3{font-size:24px}.band-page>p:last-child{font-size:9px}.band-edge{clip-path:polygon(55% 0,100% 0,100% 100%,70% 100%)}.auth-card[data-mode="signup"] .band-edge{clip-path:polygon(0 0,45% 0,30% 100%,0 100%)}.auth-card[data-mode="signup"] .auth-band{--sweep:-68%}.form-options{font-size:8px}.switch-copy{font-size:9px}.switch-copy .text-button{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}

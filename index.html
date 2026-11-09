@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a14">
+  <!-- Primary SEO -->
+  <title>VERSO — Login & Signup Animation | mrchandrayee</title>
+  <meta name="description" content="A fluid login and signup page with animated panel flip transition between forms. Pure HTML, CSS & JavaScript.">
+  <meta name="author" content="mrchandrayee">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mrchandrayee.github.io/verso-login-signup-animation/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mrchandrayee.github.io/verso-login-signup-animation/">
+  <meta property="og:title" content="VERSO — Login & Signup Animation | mrchandrayee">
+  <meta property="og:description" content="A fluid login and signup page with animated panel flip transition between forms. Pure HTML, CSS & JavaScript.">
+  <meta property="og:image" content="https://mrchandrayee.github.io/verso-login-signup-animation/preview.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mrchandrayee.github.io/verso-login-signup-animation/">
+  <meta name="twitter:title" content="VERSO — Login & Signup Animation | mrchandrayee">
+  <meta name="twitter:description" content="A fluid login and signup page with animated panel flip transition between forms. Pure HTML, CSS & JavaScript.">
+  <meta name="twitter:image" content="https://mrchandrayee.github.io/verso-login-signup-animation/preview.png">
+  <meta name="twitter:creator" content="@mrchandrayee">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "VERSO — Login & Signup Animation",
+    "description": "A fluid login and signup page with animated panel flip transition between forms. Pure HTML, CSS & JavaScript.",
+    "url": "https://mrchandrayee.github.io/verso-login-signup-animation/",
+    "author": { "@type": "Person", "name": "mrchandrayee", "url": "https://github.com/mrchandrayee" },
+    "applicationCategory": "WebApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <meta name="theme-color" content="#061d17">
+  
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="lights"><i></i><i></i><i></i></div>
+    <div class="wordmark">VERSO <span>—</span> <b>HTML</b> · <em>CSS</em> · <strong>JS</strong></div>
+    <div class="location">localhost / verso</div>
+  </div>
+
+  <main class="page">
+    <header class="intro">
+      <p>COMPONENT · 91</p>
+      <h1>Login &amp; Signup<br><span>Animation</span></h1>
+    </header>
+
+    <section class="auth-card" id="auth-card" data-mode="signin">
+      <div class="forms">
+        <form class="form-panel signin-panel" id="signin-form" novalidate>
+          <div class="form-inner">
+            <h2>Sign in</h2><span class="underline"></span>
+            <label class="field">
+              <span class="sr-only">Username or email</span>
+              <input type="text" name="identity" placeholder="Username or email" autocomplete="username" required>
+              <span class="field-icon user-icon" aria-hidden="true">♙</span>
+            </label>
+            <label class="field">
+              <span class="sr-only">Password</span>
+              <input type="password" name="password" placeholder="Password" autocomplete="current-password" minlength="6" required>
+              <button class="field-icon reveal" type="button" aria-label="Show password">◎</button>
+            </label>
+            <div class="form-options">
+              <label class="remember"><input type="checkbox" checked> <span>Keep me signed in</span></label>
+              <button class="text-button forgot" type="button">Forgot password?</button>
+            </div>
+            <button class="submit" type="submit">Sign in</button>
+            <p class="switch-copy">New to VERSO? <button type="button" class="text-button switch" data-switch="signup">Create an account</button></p>
+            <p class="form-message" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <form class="form-panel signup-panel" id="signup-form" novalidate>
+          <div class="form-inner">
+            <h2>Create account</h2><span class="underline"></span>
+            <label class="field">
+              <span class="sr-only">Full name</span>
+              <input type="text" name="name" placeholder="Full name" autocomplete="name" required minlength="2">
+              <span class="field-icon user-icon" aria-hidden="true">♙</span>
+            </label>
+            <label class="field">
+              <span class="sr-only">Email address</span>
+              <input type="email" name="email" placeholder="Email address" autocomplete="email" required>
+              <span class="field-icon" aria-hidden="true">✉</span>
+            </label>
+            <label class="field">
+              <span class="sr-only">Password</span>
+              <input type="password" name="password" placeholder="Password" autocomplete="new-password" minlength="6" required>
+              <span class="field-icon" aria-hidden="true">⌑</span>
+            </label>
+            <button class="submit create-submit" type="submit">Create account</button>
+            <p class="switch-copy">Already have an account? <button type="button" class="text-button switch" data-switch="signin">Sign in</button></p>
+            <p class="form-message" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+
+      <div class="auth-band" aria-hidden="true">
+        <span class="band-edge"></span>
+        <div class="band-inner">
+          <div class="band-page welcome-page">
+            <p class="mini-brand">V E R S O</p>
+            <h3>Welcome<br><em>back.</em></h3>
+            <p>Your boards, your drafts and your people are exactly where you left them.</p>
+          </div>
+          <div class="band-page signup-welcome">
+            <p class="mini-brand">V E R S O</p>
+            <h3>Start the<br><em>first page.</em></h3>
+            <p>A clear space for your ideas, your work and everything you want to make.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p class="footnote">Switch states to send the blade across · both forms validate for real</p>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

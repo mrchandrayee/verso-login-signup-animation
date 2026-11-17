@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VERSO — Login & Signup Animation</title><link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="browserbar">
+  <div class="traffic"><i></i><i></i><i></i></div>
+  <div class="wordmark">VERSO <span>—</span> <b>HTML</b> <em>CSS</em> <strong>JS</strong></div>
+  <div class="url">localhost / verso</div>
+</header>
+<main class="page">
+  <div class="intro"><span>COMPONENT · 91</span><h1>Login &amp; Signup<br><b>Animation</b></h1></div>
+  <section class="auth-shell" id="auth" data-mode="signin">
+    <div class="auth-pane pane-signin" id="pane-signin">
+      <form class="form signin-form" id="signinForm">
+        <h2>Sign in</h2><div class="gold-rule"></div>
+        <label class="line-field"><span>Username or email</span><input type="text" autocomplete="username" required><i>♙</i></label>
+        <label class="line-field"><span>Password</span><input type="password" autocomplete="current-password" required><button type="button" class="eye" aria-label="Show password">◎</button></label>
+        <div class="form-options"><label class="check"><input type="checkbox" checked> Keep me signed in</label><a href="#" id="forgot">Forgot password?</a></div>
+        <button class="primary" type="submit">Sign in</button>
+        <p class="switch-copy">New to VERSO? <button type="button" class="text-link" data-switch="signup">Create an account</button></p>
+      </form>
+    </div>
+    <div class="auth-pane pane-signup" id="pane-signup" inert>
+      <form class="form signup-form" id="signupForm">
+        <h2>Create account</h2><div class="gold-rule"></div>
+        <label class="line-field"><span>Full name</span><input type="text" autocomplete="name" required><i>♙</i></label>
+        <label class="line-field"><span>Email address</span><input type="email" autocomplete="email" required><i>✉</i></label>
+        <label class="line-field password-field"><span>Password</span><input type="password" minlength="8" autocomplete="new-password" required><button type="button" class="eye" aria-label="Show password">◎</button><small>Use 8 characters or more.</small></label>
+        <button class="primary" type="submit">Create account</button>
+        <p class="switch-copy">Already have an account? <button type="button" class="text-link" data-switch="signin">Sign in</button></p>
+      </form>
+    </div>
+    <div class="welcome-panel" id="welcomePanel">
+      <div class="welcome-content welcome-back">
+        <span class="mini-brand">VERSO</span><h3>Welcome<br><i>back.</i></h3>
+        <p>Your boards, your drafts and your people are exactly where you left them.</p>
+      </div>
+      <div class="welcome-content welcome-first">
+        <span class="mini-brand">VERSO</span><h3>Start the<br><i>first page.</i></h3>
+        <p>One account for every board, every draft and every device you own.</p>
+      </div>
+    </div>
+    <div class="auth_band" aria-hidden="true">
+      <span class="band_edge band_edge--lead"></span>
+      <span class="band_edge band_edge--trail"></span>
+      <div class="band_inner"><div class="band_page"></div></div>
+    </div>
+  </section>
+  <p class="under-note">Switch states to send the blade across — both forms validate for real</p>
+</main>
+<section class="code-dock">
+  <article class="code-window"><header><i class="pink"></i> index.html</header><pre><code><span class="cm">&lt;!-- one blade, two lit seams --&gt;</span>
+&lt;div class="auth_band"&gt;
+  &lt;span class="band_edge band_edge--lead"&gt;&lt;/span&gt;
+  &lt;div class="band_inner"&gt;
+    &lt;div class="band_page"&gt;
+      &lt;h3 class="welcome_title"&gt;Welcome &lt;em&gt;back.&lt;/em&gt;&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></article>
+  <article class="code-window"><header><i class="blue"></i> app.css</header><pre><code>.auth_band { <span class="cm">/* one skewed rectangle, ONE translateX */</span>
+  overflow: hidden;
+  transform: skewX(var(--rake))
+    translateX(var(--sweep));
+}
+.band_inner { transform: translateX(
+  calc(-1 * var(--sweep)))
+  skewX(calc(-1 * var(--rake))); }</code></pre></article>
+  <article class="code-window"><header><i class="yellow"></i> app.js</header><pre><code>auth.dataset.mode = next;
+panes[next].classList.add('is-on');
+later(() =&gt; {
+  panes[other].inert = true;
+  panes[next].inert = false;
+}, t.cover);</code></pre></article>
+</section>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
